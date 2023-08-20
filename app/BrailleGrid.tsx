@@ -15,25 +15,26 @@ const BrailleGrid = () => {
         )
     }
 
+    const BrailleBlock = () => {
+        return (
+            <div className="m-2 p-2 grid grid-cols-2 grid-rows-3 gap-4 bg-yellow-500">
+                <BrailleTouch />
+                <BrailleTouch />
+                <BrailleTouch />
+                <BrailleTouch />
+                <BrailleTouch />
+                <BrailleTouch />
+            </div>
+        )
+    }
+
+
     return (
         <div className="p-4 bg-red-500" >
-            <div className="grid grid-cols-2 grid-rows-3 gap-4 bg-yellow-500">
-                <BrailleTouch />
-                <BrailleTouch />
-                <BrailleTouch />
-                <BrailleTouch />
-                <BrailleTouch />
-                <BrailleTouch />
-            </div>
-            <div className="grid grid-cols-2 grid-rows-3 gap-4 bg-yellow-500">
-                <BrailleTouch />
-                <BrailleTouch />
-                <BrailleTouch />
-                <BrailleTouch />
-                <BrailleTouch />
-                <BrailleTouch />
-
-            </div>
+            <BrailleBlock />
+            <BrailleBlock />
+            <BrailleBlock />
+            <BrailleBlock />
         </div>
     )
 };
