@@ -1,29 +1,32 @@
 'use client'
 
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const BrailleGrid = () => {
-    // use document.elementFromPoint(x, y); to get the element at a given point
-    // we can use this to get the element that is being touched like the BrailleTouch component
-    // and check if active the vibrate
+    const [isTouching, setIsTouching] = useState(false);
 
-
-    const handleTouchStart = (
-
-    ) => {
-        // Vibrate for 100ms
-        navigator.vibrate(100);
+    const handleTouchStart = () => {
+        setIsTouching(true);
     }
 
+    const handleTouchEnd = () => {
+        setIsTouching(false);
+    }
+
+    useEffect(() => {
+        if (isTouching) {
+            // Vibrate for 100ms
+            navigator.vibrate(100);
+        }
+    }, [isTouching]);
+
     const BrailleTouch = () => {
-
         return (
-            <div className="p-2 bg-blue-500">
-                <div className={'m-auto w-[16px] h-[16px] rounded-full bg-green-500'}
-                >
-
-                </div>
-            </div>
+            <div
+                className={`m-auto w-[16px] h-[16px] rounded-full bg-green-500 ${isTouching ? 'bg-opacity-50' : ''}`}
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+            />
         )
     }
 
@@ -39,7 +42,6 @@ const BrailleGrid = () => {
             </div>
         )
     }
-
 
     return (
         <div className="flex p-4 bg-red-500 w-full" >
