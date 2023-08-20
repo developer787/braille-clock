@@ -15,25 +15,13 @@ const BrailleGrid = () => {
         navigator.vibrate(100);
     }
 
-    useEffect(() => {
-        // Add event listener for touch start
-        window.addEventListener('touchstart', handleTouchStart);
-
-        // Remove event listener on cleanup
-        return () => {
-            window.removeEventListener('touchstart', handleTouchStart);
-        };
-    }
-    );
-
-
-
-
     const BrailleTouch = () => {
 
         return (
             <div className="m-2 p-2 bg-blue-500">
-            <div className={'m-auto w-[14px] h-[14px] rounded-full bg-green-500'}>
+            <div className={'m-auto w-[14px] h-[14px] rounded-full bg-green-500'}
+            onTouchMove={handleTouchStart}
+            >
                 
             </div>
             </div>
@@ -42,7 +30,7 @@ const BrailleGrid = () => {
 
     const BrailleBlock = () => {
         return (
-            <div className="m-2 p-2 grid grid-cols-2 bg-yellow-500">
+            <div className="m-2 p-2 grid grid-cols-2 place-items-center bg-yellow-500">
                 <BrailleTouch />
                 <BrailleTouch />
                 <BrailleTouch />
