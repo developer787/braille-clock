@@ -16,7 +16,16 @@ const BrailleGrid = () => {
     }
 
     return (
-        <div className="bg-red-500" >
+        <div className="bg-red-500 grid grid-cols-6 gap-2" >
+            <div className="grid grid-cols-2 grid-rows-3 gap-4 bg-yellow-500">
+                <BrailleTouch />
+                <BrailleTouch />
+                <BrailleTouch />
+                <BrailleTouch />
+                <BrailleTouch />
+                <BrailleTouch />
+
+            </div>
             <div className="grid grid-cols-2 grid-rows-3 gap-4 bg-yellow-500">
                 <BrailleTouch />
                 <BrailleTouch />
