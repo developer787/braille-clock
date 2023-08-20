@@ -9,7 +9,7 @@ const BrailleGrid = () => {
     const BrailleTouch = () => {
 
         return (
-            <div className='w-[60px] h-[60px] bg-gray-500 rounded-full'>
+            <div className='w-[40px] h-[40px] bg-gray-500 rounded-full'>
                 
             </div>
         )
@@ -17,7 +17,7 @@ const BrailleGrid = () => {
 
     return (
         <div className="bg-red-500" >
-            <div className="grid grid-cols-2 grid-rows-3 gap-1 bg-yellow-500">
+            <div className="grid grid-cols-2 grid-rows-3 gap-4 bg-yellow-500">
                 <BrailleTouch />
                 <BrailleTouch />
                 <BrailleTouch />
