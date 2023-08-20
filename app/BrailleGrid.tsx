@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect } from 'react';
 
 const BrailleGrid = () => {
@@ -6,18 +8,41 @@ const BrailleGrid = () => {
     //     navigator.vibrate(100);
     //}
 
+    const handleTouchStart = (
+
+    ) => {
+        // Vibrate for 100ms
+        navigator.vibrate(100);
+    }
+
+    useEffect(() => {
+        // Add event listener for touch start
+        window.addEventListener('touchstart', handleTouchStart);
+
+        // Remove event listener on cleanup
+        return () => {
+            window.removeEventListener('touchstart', handleTouchStart);
+        };
+    }
+    );
+
+
+
+
     const BrailleTouch = () => {
 
         return (
-            <div className='w-[40px] h-[40px] bg-gray-500 rounded-full'>
+            <div className="m-2 p-2 bg-blue-500">
+            <div className={'m-auto w-[14px] h-[14px] rounded-full bg-green-500'}>
                 
+            </div>
             </div>
         )
     }
 
     const BrailleBlock = () => {
         return (
-            <div className="m-2 p-2 grid grid-cols-2 grid-rows-3 gap-4 bg-yellow-500">
+            <div className="m-2 p-2 grid grid-cols-2 bg-yellow-500">
                 <BrailleTouch />
                 <BrailleTouch />
                 <BrailleTouch />
@@ -30,7 +55,7 @@ const BrailleGrid = () => {
 
 
     return (
-        <div className="p-4 bg-red-500" >
+        <div className="flex p-4 bg-red-500 w-full" >
             <BrailleBlock />
             <BrailleBlock />
             <BrailleBlock />
