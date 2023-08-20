@@ -9,7 +9,7 @@ const BrailleGrid = () => {
     const BrailleTouch = () => {
 
         return (
-            <div className='w-[20px] h-[20px] bg-gray-500 rounded-full'>
+            <div className='w-[60px] h-[60px] bg-gray-500 rounded-full'>
                 
             </div>
         )
