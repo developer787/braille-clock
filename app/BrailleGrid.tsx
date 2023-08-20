@@ -32,7 +32,7 @@ const BrailleGrid = () => {
 
     const BrailleBlock = () => {
         return (
-            <div className="m-1 p-2 grid grid-cols-2 place-items-center bg-yellow-500 w-full">
+            <div className="m-2 p-2 grid grid-cols-2 place-items-center bg-yellow-500 w-full gap-2">
                 <BrailleTouch />
                 <BrailleTouch />
                 <BrailleTouch />
