@@ -3,10 +3,10 @@
 import { useEffect } from 'react';
 
 const BrailleGrid = () => {
-    //   const handleTouchStart = () => {
-    //     // Vibrate for 100ms
-    //     navigator.vibrate(100);
-    //}
+    // use document.elementFromPoint(x, y); to get the element at a given point
+    // we can use this to get the element that is being touched like the BrailleTouch component
+    // and check if active the vibrate
+
 
     const handleTouchStart = (
 
@@ -18,19 +18,18 @@ const BrailleGrid = () => {
     const BrailleTouch = () => {
 
         return (
-            <div className="m-2 p-2 bg-blue-500">
-            <div className={'m-auto w-[14px] h-[14px] rounded-full bg-green-500'}
-            onTouchMove={handleTouchStart}
-            >
-                
-            </div>
+            <div className="p-2 bg-blue-500">
+                <div className={'m-auto w-[16px] h-[16px] rounded-full bg-green-500'}
+                >
+
+                </div>
             </div>
         )
     }
 
     const BrailleBlock = () => {
         return (
-            <div className="m-2 p-2 grid grid-cols-2 place-items-center bg-yellow-500">
+            <div className="m-1 p-2 grid grid-cols-2 place-items-center bg-yellow-500 w-full">
                 <BrailleTouch />
                 <BrailleTouch />
                 <BrailleTouch />
